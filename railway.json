@@ -1,0 +1,56 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "nixpacks"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "startCommand": "npm run start",
+    "restartPolicyMaxRetries": 5
+  },
+  "variables": {
+    "PORT": {
+      "description": "Port to run the service on",
+      "value": "3000"
+    },
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "COINBASE_API_KEY": {
+      "description": "Coinbase API Key",
+      "value": ""
+    },
+    "COINBASE_API_SECRET": {
+      "description": "Coinbase API Secret",
+      "value": ""
+    },
+    "COINBASE_PRIVATE_KEY": {
+      "description": "Coinbase Private Key",
+      "value": ""
+    },
+    "ENABLED_CHAINS": {
+      "description": "Comma-separated list of enabled chains",
+      "value": "ethereum,base,polygon,solana,arbitrum,optimism"
+    },
+    "DEFAULT_CHAIN": {
+      "description": "Default chain for auto-selection",
+      "value": "base"
+    },
+    "MAX_GAS_PRICE": {
+      "description": "Maximum gas price in gwei",
+      "value": "100"
+    },
+    "LOG_LEVEL": {
+      "description": "Logging level",
+      "value": "info"
+    }
+  },
+  "healthchecks": {
+    "readiness": {
+      "path": "/health",
+      "initialDelaySeconds": 10,
+      "periodSeconds": 30
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "coinbase-multi-injector",
+  "version": "1.0.0",
+  "description": "Plug-and-play multi-chain data injection using Coinbase SDK 2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "railway:deploy": "railway up",
+    "railway:logs": "railway logs --follow"
+  },
+  "keywords": [
+    "coinbase",
+    "blockchain",
+    "multi-chain",
+    "data-injection",
+    "ethereum",
+    "solana",
+    "base",
+    "polygon",
+    "railway"
+  ],
+  "author": "Manus AI",
+  "license": "MIT",
+  "dependencies": {
+    "@coinbase/coinbase-sdk": "^2.0.0",
+    "express": "^4.18.0",
+    "dotenv": "^16.0.0",
+    "ethers": "^6.0.0",
+    "axios": "^1.6.0",
+    "pino": "^8.0.0",
+    "pino-http": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.0",
+    "@types/jest": "^29.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
